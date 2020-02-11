@@ -1,0 +1,178 @@
+\documentclass[
+	12pt, % allowed font sizes : 10pt (default), 11pt and 12pt
+	a4paper, % paper sizes: a4paper (default), a5paper
+	%draft, %draft mode: faster compilation. figures not loaded and shows overfull boxes
+	%twocolumn, % multicolumn: onecolum (default), two column text
+	%fleqn, % left-aligned formulas
+	% leqno, % formula labels on the left-hand side
+	%landscape % landscape mode
+	]{article}
+
+\usepackage{amssymb} % advanced math symbols
+\usepackage{amsmath} % for equations,  math functions and operators
+\usepackage{amsfonts} % extended fonts
+\usepackage{eurosym} % Euro symbol
+\usepackage{geometry} % adjust margins below with \geometry{options}
+\usepackage{graphicx} % \includegraphics preferable as pdf or png
+\usepackage{subfigure} % subfigures in subfigure environment
+\usepackage{caption} % captions for figures and tables
+\usepackage{color} % color text
+\usepackage{setspace} % adjust line spacing with \onehalfspacing, \doublespacing and \singlespacing
+\usepackage{footmisc} % adjust footnotes
+\usepackage{natbib} % advanced bibliography management
+\usepackage{pdflscape} % used for singular landscape pages
+\usepackage{array} % visualizes matrixes 
+\usepackage{hyperref} % set hyperlinks in the document and to the outside (webpages, mail-adrdresses)
+\usepackage{ntheorem} % replacement for  amsthm to use \theoremstyle{break}
+\usepackage{lineno} % show line numbers in the left margin
+\linenumbers
+
+\onehalfspacing
+\theoremstyle{break} % options: break (default), definition, plian, remark
+% Here you can definition your own theorem environments. DON'T USE A HIERACHY!
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+% Always make a linespace in front of every proof.
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.}}{\ \rule{0.5em}{0.5em}}
+
+% Use \C{width}, \L{widht} and \R{width} in tabular environment to make tables with fixed column width. C, L, and R stand for center, align left and align right
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+
+% adjust your margins here
+\geometry{left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm}
+
+\begin{document}
+
+\begin{titlepage}
+\singlespacing
+\title{
+	The Title of your Work
+	\thanks{Be nice!}
+}
+
+% add the authors. Multiple authors are connected with "\and"
+% respect the lexiographic order!
+\author{
+	Hans Gersbach\\
+	\normalsize Center of Economics Research\\
+	\normalsize at ETH Zurich\\ 
+	\normalsize Z\"{u}richbergstrasse 18\\
+	\normalsize 8092 Zurich\\
+	\normalsize Switzerland\\ 
+	\normalsize \href{mailto:hgersbach@ethz.ch}{hgersbach@ethz.ch}
+	\and
+	Name Surname\\
+	\normalsize Center of Economics Research\\
+	\normalsize at ETH Zurich\\ 
+	\normalsize Z\"{u}richbergstrasse 18\\
+	\normalsize 8092 Zurich\\
+	\normalsize Switzerland\\ 
+	\normalsize \href{mailto:yourmail@ethz.ch}{yourmail@ethz.ch}
+%	\and
+%	Name Surname\\
+%	\normalsize Center of Economics Research\\
+%	\normalsize at ETH Zurich\\ 
+%	\normalsize Z\"{u}richbergstrasse 18\\
+%	\normalsize 8092 Zurich\\
+%	\normalsize Switzerland\\ 
+%	\normalsize \href{mailto:yourmail@ethz.ch}{yourmail@ethz.ch}
+	}
+
+\date{Last updated: \today}
+
+\maketitle
+
+\begin{abstract}
+	\noindent Placeholder\\
+	% !!! no additional linespaces here !!!
+	\vspace{0in}\\
+	\noindent\textbf{Keywords:} key1, key2, key3\\
+	\vspace{0in}\\
+	\noindent\textbf{JEL Classification:} code1, code2, code3\\
+	\bigskip
+\end{abstract}
+\thispagestyle{empty}
+\end{titlepage}
+
+\pagebreak \newpage
+
+\setcounter{page}{2}
+\onehalfspacing
+
+\section{Example text}\label{sec:examples}
+\subsection{Sentence ends with formula followed by new paragraph}
+Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
+
+Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus
+\begin{equation}
+\exp\{-i\pi\} + 1 = 0.
+\end{equation}
+
+Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+\begin{theorem}[Optional theorem title]
+	Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+\end{theorem} Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+
+\subsection{Ongoing sentence  with sequence of formulas}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec
+\begin{equation}
+\exp\{-i\pi\} + 1 = 0,
+\end{equation}
+pellentesque eu
+\begin{equation}
+E = m c^2,
+\end{equation}
+pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+
+\section{Introduction} \label{sec:introduction}
+Motivate your work! Define the gap your contribution closes.
+
+\section{Literature Review} \label{sec:literature}
+Always cite your favorite authors, like \cite{gersbach2017regulation}.
+
+\section{Model} \label{sec:model}
+\begin{assumption}
+	Whatever you want!
+\end{assumption}
+
+\section{Analysis} \label{sec:analysis}
+Some introductory text...
+\begin{proposition}\label{prop:label}
+	content...
+\end{proposition}
+
+\section{Conclusion} \label{sec:conclusion}
+Wrap it up.
+Summarize the issue.
+Highlight your contribution again.
+Introduce possible extensions.
+
+\singlespacing
+
+% That's the neccessary style for economics publications
+\bibliographystyle{apalike}
+% You can add several .bib-file with comma as separator
+\bibliography{references}
+
+\clearpage
+
+\doublespacing
+\appendix
+\section{Proofs} \label{app:proofs}
+The Proofs start on a new page.
+This section gives the extensive proofs to preceding propositions.
+
+\begin{proof}[Proof to Proposition \ref{prop:label}]
+	Go hard!
+\end{proof}
+
+
+
+\end{document}
