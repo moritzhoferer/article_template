@@ -8,19 +8,20 @@
 	%landscape % landscape mode
 	]{article}
 
+% JUST ADD PACKAGES YOU REALLY NEED
 \usepackage{amssymb} % advanced math symbols
 \usepackage{amsmath} % for equations,  math functions and operators
-\usepackage{amsfonts} % extended fonts
-\usepackage{eurosym} % Euro symbol
+%\usepackage{amsfonts} % extended fonts
+%\usepackage{eurosym} % Euro symbol
 \usepackage{geometry} % adjust margins below with \geometry{options}
-\usepackage{graphicx} % \includegraphics preferable as pdf or png
-\usepackage{subfigure} % subfigures in subfigure environment
-\usepackage{caption} % captions for figures and tables
-\usepackage{color} % color text
+%\usepackage{graphicx} % \includegraphics preferable as pdf or png
+%\usepackage{subfigure} % subfigures in subfigure environment
+%\usepackage{caption} % captions for figures and tables
+%\usepackage{color} % color text
 \usepackage{setspace} % adjust line spacing with \onehalfspacing, \doublespacing and \singlespacing
-\usepackage{footmisc} % adjust footnotes
+%\usepackage{footmisc} % adjust footnotes
 \usepackage{natbib} % advanced bibliography management
-\usepackage{pdflscape} % used for singular landscape pages
+%\usepackage{pdflscape} % used for singular landscape pages
 \usepackage{array} % visualizes matrixes 
 \usepackage{hyperref} % set hyperlinks in the document and to the outside (webpages, mail-adrdresses)
 \usepackage{ntheorem} % replacement for  amsthm to use \theoremstyle{break}
@@ -53,8 +54,7 @@
 \begin{titlepage}
 \singlespacing
 \title{
-	The Title of your Work
-	\thanks{Be nice!}
+	The Title of your Work\thanks{Be nice!}
 }
 
 % add the authors. Multiple authors are connected with "\and"
@@ -90,7 +90,22 @@
 \maketitle
 
 \begin{abstract}
-	\noindent Placeholder\\
+	\noindent
+	\footnote{
+		Copied from \cite{boyce2010global} with comments and a note form \textit{Nautre Education}:
+		With just under 200 words, this abstract can convey the motivation for and outcome of the work with some accuracy, without intimidating readers by its length.
+	} \textbf{(Context)} In the oceans, ubiquitous microscopic phototrophs (phytolankton) account for approximately half the production of organic matter on Earth, thus affecting the abundance and diversity of marine organisms and strongly influencing
+	climate processes.
+	\textbf{(What we have)} Analyses of the satellite-derived phytoplankton concentration (available since 1979) have suggested decadal fluctuations linked to climate forcing, but the length of this record is insufficient to resolve longer-term trends.
+	\textbf{(What we want)} To estimate the time dependence of phytoplankton biomass since the beginning of oceanographic measurements in 1899, 
+	\textbf{(Task)}	we combined available ocean transparency measurements and in situ chlorophyll observations.
+	\textbf{(Object of the document)} This paper presents the trends we identified at local, regional, and global scales.
+	\textbf{(Findings)} We observed declines in eight out of ten ocean regions, and estimated a global rate of decline of ∼1\% of the global median
+	per year. Our analyses further revealed interannual to decadal phytoplankton fluctuations superimposed on long-term trends.
+	These fluctuations are strongly correlated with basin-scale climate indices, whereas the long-term declining trends are	related to increasing sea surface temperatures.
+	\textbf{(Conclusion)} In conclusion, global phytoplankton concentration has definitely declined over the past century; 
+	\textbf{(Perspectives)} this decline will need to be considered	in future studies of marine ecosystems, geochemical cycling,
+	ocean circulation, and fisheries.\\
 	% !!! no additional linespaces here !!!
 	\vspace{0in}\\
 	\noindent\textbf{Keywords:} key1, key2, key3\\
@@ -172,7 +187,4 @@ This section gives the extensive proofs to preceding propositions.
 \begin{proof}[Proof to Proposition \ref{prop:label}]
 	Go hard!
 \end{proof}
-
-
-
 \end{document}
