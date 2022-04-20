@@ -2,7 +2,7 @@
 	12pt, % allowed font sizes : 10pt (default), 11pt and 12pt
 	a4paper, % paper sizes: a4paper (default), a5paper
 	%draft, %draft mode: faster compilation. figures not loaded and shows overfull boxes
-	%twocolumn, % multicolumn: onecolum (default), two column text
+	%twocolumn, % multicolumn: onecolumn (default), two column text
 	%fleqn, % left-aligned formulas
 	% leqno, % formula labels on the left-hand side
 	%landscape % landscape mode
@@ -11,10 +11,11 @@
 % JUST ADD PACKAGES YOU REALLY NEED
 \usepackage{amssymb} % advanced math symbols
 \usepackage{amsmath} % for equations,  math functions and operators
-%\usepackage{amsfonts} % extended fonts
+\usepackage{amsfonts} % extended fonts
+\usepackage{authblk}
 %\usepackage{eurosym} % Euro symbol
 \usepackage{geometry} % adjust margins below with \geometry{options}
-%\usepackage{graphicx} % \includegraphics preferable as pdf or png
+%\usepackage{graphicx} % \includegraphics preferable as PDF or PNG
 %\usepackage{subfigure} % subfigures in subfigure environment
 %\usepackage{caption} % captions for figures and tables
 %\usepackage{color} % color text
@@ -22,15 +23,15 @@
 %\usepackage{footmisc} % adjust footnotes
 \usepackage{natbib} % advanced bibliography management
 %\usepackage{pdflscape} % used for singular landscape pages
-\usepackage{array} % visualizes matrixes 
-\usepackage{hyperref} % set hyperlinks in the document and to the outside (webpages, mail-adrdresses)
+\usepackage{array} % visualizes matrices 
+\usepackage[breaklinks=true, colorlinks=true, linkcolor=black, citecolor=black,]{hyperref} % set hyperlinks in the document and to the outside (web-pages, mail-addresses)
 \usepackage[amsmath,hyperref]{ntheorem} % replacement for  amsthm to use \theoremstyle{break}
 \usepackage{lineno} % show line numbers in the left margin
 \linenumbers
 
 \onehalfspacing
-\theoremstyle{break} % options: break (default), definition, plian, remark
-% Here you can definition your own theorem environments. DON'T USE A HIERACHY!
+\theoremstyle{break} % options: break (default), definition, plain, remark
+% Here you can definition your own theorem environments. DON'T USE A HIERARCHY!
 \newtheorem{definition}{Definition}
 \newtheorem{assumption}{Assumption}
 \newtheorem{theorem}{Theorem}
@@ -41,7 +42,7 @@
 % Always make a linespace in front of every proof.
 \newenvironment{proof}[1][Proof]{\noindent\textbf{#1.}}{\ \rule{0.5em}{0.5em}}
 
-% Use \C{width}, \L{widht} and \R{width} in tabular environment to make tables with fixed column width. C, L, and R stand for center, align left and align right
+% Use \C{width}, \L{width} and \R{width} in tabular environment to make tables with fixed column width. C, L, and R stand for center, align left and align right
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
@@ -57,33 +58,14 @@
 	The Title of your Work\thanks{Be nice!}
 }
 
-% add the authors. Multiple authors are connected with "\and"
-% respect the lexiographic order!
-\author{
-	Hans Gersbach\\
-	\normalsize Center of Economic Research\\
-	\normalsize at ETH Zurich\\ 
-	\normalsize Z\"{u}richbergstrasse 18\\
-	\normalsize 8092 Zurich\\
-	\normalsize Switzerland\\ 
-	\normalsize \href{mailto:hgersbach@ethz.ch}{hgersbach@ethz.ch}
-	\and
-	Name Surname\\
-	\normalsize Center of Economic Research\\
-	\normalsize at ETH Zurich\\ 
-	\normalsize Z\"{u}richbergstrasse 18\\
-	\normalsize 8092 Zurich\\
-	\normalsize Switzerland\\ 
-	\normalsize \href{mailto:yourmail@ethz.ch}{yourmail@ethz.ch}
-%	\and
-%	Name Surname\\
-%	\normalsize Center of Economics Research\\
-%	\normalsize at ETH Zurich\\ 
-%	\normalsize Z\"{u}richbergstrasse 18\\
-%	\normalsize 8092 Zurich\\
-%	\normalsize Switzerland\\ 
-%	\normalsize \href{mailto:yourmail@ethz.ch}{yourmail@ethz.ch}
-	}
+\newcommand{\mailto}[1]{\thanks{\href{mailto:#1}{#1}}}
+\renewcommand\Affilfont{\small}
+
+
+% Add the authors.
+\author[a]{Hans Gersbach\mailto{hgersbach@ethz.ch}}
+\author[a]{Name Surname\mailto{yourmail@ethz.ch}}
+\affil[a]{Center~of~Economic~Research, ETH~Zurich, Z\"{u}richbergstrasse~18, 8092~Zurich, Switzerland}
 
 \date{Last updated: \today}
 
@@ -92,7 +74,7 @@
 \begin{abstract}
 	\noindent
 	How to write an abstract\footnote{
-		Copied from \cite{boyce2010global} with comments and a note form \textit{Nautre Education}:
+		Copied from \cite{boyce2010global} with comments and a note form \textit{Nature Education}:
 		With just under 200 words, this abstract can convey the motivation for and outcome of the work with some accuracy, without intimidating readers by its length.
 		If the journal allows to have the abstract as multiple paragraphs, start a new one before the findings.
 	}: \textbf{(Context)} In the oceans, ubiquitous microscopic phototrophs (phytolankton) account for approximately half the production of organic matter on Earth, thus affecting the abundance and diversity of marine organisms and strongly influencing
@@ -172,7 +154,7 @@ Introduce possible extensions.
 
 \singlespacing
 
-% That's the neccessary style for economics publications
+% That's the necessary style for economics publications
 \bibliographystyle{apalike}
 % You can add several .bib-file with comma as separator
 \bibliography{references}
